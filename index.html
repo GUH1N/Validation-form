@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Validation form</h1>
+    <div class="container">
+        <form action="./index.html" class="form" name="Validatedform" method="post" onsubmit="return validation()">
+            <label for="f_name">First Name:</label>
+            <input type="text" name="f_name" id="f_name" placeholder="First Name">
+            <label for="l_name">Last Name:</label>
+            <input type="text" name="l_name" id="l_name" placeholder="Last Name">
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" placeholder="City">
+            <label for="p_no">Phone Number:</label>
+            <input type="number" name="p_no" id="p_no" placeholder="Phone Number">
+            <label for="add">Address:</label>
+            <textarea name="add" id="add" cols="30" rows="5" placeholder="Address"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        function validation(){
+        var f_name = document.Validatedform.f_name.value;
+        var l_name = document.Validatedform.l_name.value;
+        var city = document.Validatedform.city.value;
+        var p_no = document.Validatedform.p_no.value;
+        var add = document.Validatedform.add.value;
+        if(f_name == "" || f_name == "null"){
+            alert("Please enter your First Name");
+            return false;
+        }
+        else if(l_name == "" || l_name == "null"){
+            alert("Please enter your Last Name");
+            return false;
+        }
+        else if(city == "" || city == "null"){
+            alert("Please enter your City");
+            return false;
+        }
+        else if(p_no == "" || (p_no.length > 10 || p_no.length < 10)){
+            alert("Please enter your Phone Number");
+            return false;
+        }
+        else if(add == ""){
+            alert("Please enter your Address");
+            return false;
+        }
+        else{
+            alert("Form Submitted Successfully");
+        }
+    }
+    </script>
+</body>
+</html>
